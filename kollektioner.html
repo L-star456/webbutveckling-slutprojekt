@@ -5,5 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kollektioner - KlockLyx</title>
     <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #0B3D2E; /* rich dark green */
+            color: #F5F1E9; /* beige/off-white */
+            overflow-x: hidden; /* prevent horizontal scrolling */
+        }
+        header {
+            background: rgba(11, 61, 46, 0.95); /* dark green with slight transparency */
+            padding: 1.5em 2em;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            font-weight: 700;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            color: #E6D8AD; /* light beige */
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5em;
+            padding: 0;
+            margin-top: 0.5em;
+        }
+        nav a {
+            color: #E6D8AD;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #C9B77A; /* lighter beige on hover */
+        }
+        main {
+            padding: 3em 4em;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        main h2 {
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            font-weight: 700;
+            font-size: 2.5em;
+            color: #E6D8AD;
+            margin-bottom: 1em;
+            border-bottom: 2px solid #C9B77A;
+            padding-bottom: 0.3em;
+        }
+        main p {
+            color: #D9D2B6;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5em;
+            padding: 3em 4em;
+            background-color: #E6D8AD; /* beige background for product section */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            margin: 2em auto;
+            max-width: 1200px;
+        }
 
    
