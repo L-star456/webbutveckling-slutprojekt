@@ -1,131 +1,86 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>KlockLyx - Exklusiva lyxklockor</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
+            font-family: 'Georgia', serif;
+            background-color: #0B3D2E; 
+            color: #F5F1E9; 
+            overflow-x: hidden; 
+        }
+        #hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #E6D8AD;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0 2em;
+        }
+        .hero-content h2 {
+            font-size: 4em;
+            font-weight: 700;
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            margin-bottom: 0.5em;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .hero-content p {
+            font-size: 1.5em;
+            font-style: italic;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+            max-width: 700px;
+            margin: 0 auto;
         }
         header {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 1em;
+            background: rgba(11, 61, 46, 0.95); 
+            padding: 1.5em 2em;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
         header h1 {
             margin: 0;
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            font-weight: 700;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            color: #E6D8AD; 
         }
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2em;
+            gap: 2.5em;
             padding: 0;
+            margin-top: 0.5em;
         }
         nav a {
-            color: #fff;
+            color: #E6D8AD;
             text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
         }
-        #hero {
-            background: url('background-hero.jpg') center/cover no-repeat;
-            text-align: center;
-            padding: 6em 2em;
-        }
-        #hero h2 {
-            font-size: 3em;
-            margin-bottom: 0.5em;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2em;
-            padding: 2em;
-        }
-        .product-card {
-            background-color: #111;
-            padding: 1em;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .product-card img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-        section {
-            padding: 2em;
-        }
-        footer {
-            text-align: center;
-            background-color: #111;
-            padding: 1em;
-        }
-        #retailer-list, #notifications, #reviews {
-            margin-top: 1em;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>KlockLyx</h1>
-        <nav>
-            <ul>
-                <li><a href="#collection">Kollektioner</a></li>
-                <li><a href="#about">Om oss</a></li>
-                <li><a href="#retailers">Återförsäljare</a></li>
-                <li><a href="#blog">Blogg</a></li>
-                <li><a href="#reviews">Recensioner</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="hero">
-        <h2>Upplev tidlös elegans</h2>
-        <p>Upptäck vår exklusiva kollektion av lyxklockor från Rolex och andra märken.</p>
-    </section>
-
-    <section id="collection">
-        <h2>Kollektioner</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="26618.webp" alt="Rolex Submariner">
-                <h3>Rolex Submariner</h3>
-                <p>Klassisk dykarklocka med ikonisk design.</p>
-            </div>
-            <div class="product-card">
-                <img src="26619.webp" alt="Rolex Daytona">
-                <h3>Rolex Daytona</h3>
-                <p>Sportig elegans med racingarv.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <h2>Om KlockLyx</h2>
-        <p>KlockLyx är din guide till exklusiva klockor. Vi erbjuder detaljerad information, historik, samt kontakt till auktoriserade återförsäljare.</p>
-    </section>
-
-    <section id="retailers">
-        <h2>Hitta en återförsäljare</h2>
-        <button onclick="findRetailers()">Visa närmaste återförsäljare</button>
-        <div id="retailer-list"></div>
-    </section>
-
-    <section id="blog">
-        <h2>Blogg: Tips om klockköp</h2>
-        <article>
-            <h3>Hur du känner igen en äkta Rolex</h3>
-            <p>Lär dig identifiera detaljer som skiljer äkta klockor från kopior.</p>
-        </article>
-        <article>
-            <h3>Investera i lyxklockor</h3>
-            <p>Varför vissa modeller ökar i värde och hur du kan tänka långsiktigt.</p>
-        </article>
-    </section>
-
-    
+        nav a:hover {
+            color: #C9B77A; 
