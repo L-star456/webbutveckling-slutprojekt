@@ -4,83 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>KlockLyx - Exklusiva lyxklockor</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Georgia', serif;
-            background-color: #0B3D2E; 
-            color: #F5F1E9; 
-            overflow-x: hidden; 
+    <link rel="stylesheet" href="style2.css" />
+    </head>
+<body>
+    <header>
+        <h1>KlockLyx</h1>
+        <nav>
+            <ul>
+                <li><a href="Klocklyx.html">Hem</a></li>
+                <li><a href="kollektioner.html">Kollektioner</a></li>
+                <li><a href="omoss.html">Om oss</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <video autoplay muted loop class="background-video" src="./videos_new-watches-2021-homepage-exploration-cover.webm"></video>
+        <div class="hero-content">
+            <h2>Upplev tidlös elegans</h2>
+            <p>Upptäck vår exklusiva kollektion av lyxklockor från Rolex och andra märken.</p>
+        </div>
+    </section>
+
+    <section id="collection">
+        <h2>Kollektioner</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="26618.webp" alt="Rolex Submariner" />
+                <h3>Rolex Submariner</h3>
+                <p>Klassisk dykarklocka med ikonisk design.</p>
+            </div>
+            <div class="product-card">
+                <img src="26619.webp" alt="Rolex Daytona" />
+                <h3>Rolex Daytona</h3>
+                <p>Sportig elegans med racingarv.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Om KlockLyx</h2>
+        <p>KlockLyx är din guide till exklusiva klockor. Vi erbjuder detaljerad information, historik, samt de bästa och närmaste återförsäljare</p>
+    </section>
+
+    <section id="retailers">
+        <h2>Hitta en återförsäljare</h2>
+        <button onclick="findRetailers()">Visa närmaste återförsäljare</button>
+        <div id="retailer-list"></div>
+    </section>
+
+    <section id="notifications">
+        <h2>Få notiser om nya modeller</h2>
+        <input type="email" placeholder="Din e-post..." />
+        <button onclick="subscribe()">Prenumerera</button>
+        <p id="notification-msg"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 KlockLyx.</p>
+    </footer>
+
+    <script>
+        function findRetailers() {
+            const list = document.getElementById('retailer-list');
+            list.innerHTML = `
+                <ul>
+                    <li>Rolex Stockholm - Biblioteksgatan 5</li>
+                    <li>Rolex Göteborg - Avenyn 10</li>
+                    <li>Rolex Malmö - Södergatan 3</li>
+                </ul>
+            `;
         }
-        #hero {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
+
+        function subscribe() {
+            const msg = document.getElementById('notification-msg');
+            msg.textContent = "Tack för din prenumeration! Du får ett mail vid nästa nyhet.";
         }
-        .background-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: 0;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            color: #E6D8AD;
-            text-align: center;
-            top: 50%;
-            transform: translateY(-50%);
-            padding: 0 2em;
-        }
-        .hero-content h2 {
-            font-size: 4em;
-            font-weight: 700;
-            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-            margin-bottom: 0.5em;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-        }
-        .hero-content p {
-            font-size: 1.5em;
-            font-style: italic;
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        header {
-            background: rgba(11, 61, 46, 0.95); 
-            padding: 1.5em 2em;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        }
-        header h1 {
-            margin: 0;
-            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-            font-weight: 700;
-            font-size: 2.5em;
-            letter-spacing: 2px;
-            color: #E6D8AD; 
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2.5em;
-            padding: 0;
-            margin-top: 0.5em;
-        }
-        nav a {
-            color: #E6D8AD;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #C9B77A; 
+    </script>
+</body>
+</html>
