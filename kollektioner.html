@@ -4,124 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kollektioner - KlockLyx</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Georgia', serif;
-            background-color: #0B3D2E; 
-            color: #F5F1E9; 
-            overflow-x: hidden; 
-        }
-        header {
-            background: rgba(11, 61, 46, 0.95); 
-            padding: 1.5em 2em;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        }
-        header h1 {
-            margin: 0;
-            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-            font-weight: 700;
-            font-size: 2.5em;
-            letter-spacing: 2px;
-            color: #E6D8AD; 
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2.5em;
-            padding: 0;
-            margin-top: 0.5em;
-        }
-        nav a {
-            color: #E6D8AD;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #C9B77A; 
-        }
-        main {
-            padding: 3em 4em;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        main h2 {
-            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-            font-weight: 700;
-            font-size: 2.5em;
-            color: #E6D8AD;
-            margin-bottom: 1em;
-            border-bottom: 2px solid #C9B77A;
-            padding-bottom: 0.3em;
-        }
-        main p {
-            color: #D9D2B6;
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5em;
-            padding: 3em 4em;
-            background-color: #E6D8AD; 
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            margin: 2em auto;
-            max-width: 1200px;
-        }
-        
-        .product-card {
-            background-color: #0B3D2E; 
-            padding: 1.5em;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.6);
-        }
-        .product-card img {
-            max-width: 100%;
-            border-radius: 12px;
-            margin-bottom: 1em;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-        .product-card h3 {
-            margin: 0.5em 0 0.3em 0;
-            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-            font-weight: 700;
-            color: #F5F1E9;
-        }
-        .product-card p {
-            color: #D9D2B6;
-            font-size: 1em;
-            font-style: italic;
-        }
-        footer {
-            text-align: center;
-            background-color: #0B3D2E;
-            padding: 1.5em 0;
-            color: #E6D8AD;
-            font-weight: 600;
-            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-            letter-spacing: 1px;
-            box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
-            margin-top: 3em;
-        }
-    </style>
+    <link rel="stylesheet" href="kollektioner.css" />
 </head>
 <body>
     <header>
         <h1>KlockLyx</h1>
-        <nav>
+        <button id="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-container" style="background:none; border:none; color:#E6D8AD; font-size:1.2em; cursor:pointer; display:flex; align-items:center; gap:0.5em;">
+            <span style="font-size:1.5em;">&#9776;</span> Menu
+        </button>
+        <nav id="menu-container" style="display:none;">
+            <button id="close-menu-button" aria-label="Close menu" style="background:none; border:none; color:#E6D8AD; font-size:1.2em; cursor:pointer; margin-bottom:1em; display:flex; align-items:center; gap:0.5em;">
+                <span style="font-size:1.5em;">&#10005;</span> Close
+            </button>
             <ul>
                 <li><a href="Klocklyx.html">Hem</a></li>
                 <li><a href="kollektioner.html">Kollektioner</a></li>
@@ -168,5 +62,6 @@
     <footer>
         <p>&copy; 2025 KlockLyx.</p>
     </footer>
+    <script src="menuButton.js"></script>
 </body>
 </html>

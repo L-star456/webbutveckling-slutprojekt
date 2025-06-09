@@ -9,7 +9,13 @@
 <body>
     <header>
         <h1>KlockLyx</h1>
-        <nav>
+        <button id="menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-container" style="background:none; border:none; color:#E6D8AD; font-size:1.2em; cursor:pointer; display:flex; align-items:center; gap:0.5em;">
+            <span style="font-size:1.5em;">&#9776;</span> Menu
+        </button>
+        <nav id="menu-container" style="display:none;">
+            <button id="close-menu-button" aria-label="Close menu" style="background:none; border:none; color:#E6D8AD; font-size:1.2em; cursor:pointer; margin-bottom:1em; display:flex; align-items:center; gap:0.5em;">
+                <span style="font-size:1.5em;">&#10005;</span> Close
+            </button>
             <ul>
                 <li><a href="Klocklyx.html">Hem</a></li>
                 <li><a href="kollektioner.html">Kollektioner</a></li>
@@ -63,15 +69,14 @@
     <footer>
         <p>&copy; 2025 KlockLyx.</p>
     </footer>
-
     <script>
         function findRetailers() {
             const list = document.getElementById('retailer-list');
             list.innerHTML = `
                 <ul>
-                    <li>Rolex Stockholm - Biblioteksgatan 5</li>
-                    <li>Rolex Göteborg - Avenyn 10</li>
-                    <li>Rolex Malmö - Södergatan 3</li>
+                    <ul>Rolex Stockholm - Biblioteksgatan 5</ul>
+                    <ul>Rolex Göteborg - Avenyn 10</ul>
+                    <ul>Rolex Malmö - Södergatan 3</ul>
                 </ul>
             `;
         }
@@ -81,5 +86,6 @@
             msg.textContent = "Tack för din prenumeration! Du får ett mail vid nästa nyhet.";
         }
     </script>
+    <script src="menuButton.js"></script>
 </body>
 </html>

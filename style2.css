@@ -1,7 +1,12 @@
-        body {
+body {
             margin: 0;
             font-family: 'Georgia', serif;
             background-color: #0B3D2E; 
+            background-image: url('mountain.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: #F5F1E9; 
             overflow-x: hidden; 
         }
@@ -225,7 +230,150 @@
             box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
             margin-top: 3em;
         }
-        nav ul li:nth-child(4), nav ul li:nth-child(5) {
-            display: none;
+
+        
+        @media (max-width: 768px) {
+            body {
+                font-size: 90%;
+            }
+            header {
+                padding: 1em;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 1em;
+                margin-top: 1em;
+            }
+            main {
+                padding: 1.5em 2em;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+                padding: 1em 2em;
+            }
+            .product-card img {
+                max-width: 100%;
+            }
+            #hero h2 {
+                font-size: 2em;
+            }
+            #hero p {
+                font-size: 1em;
+            }
         }
-    
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+            nav a {
+                font-size: 1em;
+            }
+            .hero-content h2 {
+                font-size: 1.5em;
+            }
+            .hero-content p {
+                font-size: 0.9em;
+            }
+            main h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        
+        body, input, textarea, [contenteditable] {
+            caret-color: transparent !important;
+            user-select: none !important;
+        }
+
+        
+        img, .product-card {
+            caret-color: transparent !important;
+            user-select: none !important;
+            outline: none !important;
+        }
+
+        
+        .product-card h3, .product-card p {
+            caret-color: transparent !important;
+            user-select: none !important;
+            outline: none !important;
+        }
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #0B3D2E; 
+            color: #F5F1E9; 
+            overflow-x: hidden; 
+        }
+        header {
+            background: rgba(11, 61, 46, 0.95); 
+            padding: 1.5em 2em;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        header h1 {
+            margin: 0;
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            font-weight: 700;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            color: #E6D8AD; 
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5em;
+            padding: 0;
+            margin-top: 0.5em;
+        }
+        nav a {
+            color: #E6D8AD;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #C9B77A; 
+        }
+main {
+            padding: 3em 4em;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+.text-background {
+            background-color: rgba(11, 61, 46, 0.95); 
+            padding: 2em 3em;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+            display: inline-block;
+            max-width: 100%;
+        }
+        main h2 {
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            font-weight: 700;
+            font-size: 2.5em;
+            color: #E6D8AD;
+            margin-bottom: 1em;
+            border-bottom: 2px solid #C9B77A;
+            padding-bottom: 0.3em;
+        }
+        main p {
+            color: #D9D2B6;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            background-color: #0B3D2E;
+            padding: 1.5em 0;
+            color: #E6D8AD;
+            font-weight: 600;
+            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            letter-spacing: 1px;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.5);
+            margin-top: 3em;
+        }
